@@ -9,26 +9,31 @@ let vocales = {
 
 
 function encode(string) {
-    let solucion = string;
+
     for (let i = 0; i < string.length; i++){
         if (vocales.hasOwnProperty(string[i])) {
         
-         solucion = solucion.replace(string[i], vocales[string[i]]);
+         string = string.replace(string[i], vocales[string[i]]);
         
-        }
-        
+        } 
     }
-    return solucion;
+    return string;
 
-   /* for (let key in vocales) {
-       solucion =  string.replaceAll(key, vocales[key])
-    }
-    return solucion;
-    */
   }
   
-  function decode(string) {
-    return
+function decode(string) {
+
+    
+    for (let j = 0; j < string.length; j++){
+        for (let key in vocales) {
+            if (vocales[key] == string[j]) {
+                string = string.replace(string[j], key)
+                continue;
+            }
+        }
+    }
+    return string;
   }
 
 console.log(encode('hello'));
+console.log(decode('h2ll4'));
