@@ -1,12 +1,17 @@
 
-// smart solution code wars:
+// seconfd smart solution code wars:
 function encode(string){
-    return string.replace(/[aeiou]/g, function (x) { return '_aeiou'.indexOf(x) });
+    var vowelMapping = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5};
+    return codeStringGivenMapping(string, vowelMapping);
   }
   
-  //turn numbers back into vowels
   function decode(string){
-    return string.replace(/[1-5]/g, function (x) { return '_aeiou'.charAt(x) });
+    var vowelMapping = {'1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u'};
+    return codeStringGivenMapping(string, vowelMapping); 
   }
-console.log(encode('hello'));
-console.log(decode('h2ll4'));
+  
+  function codeStringGivenMapping(string, mapping){
+    return string.split('').map(function(char){
+      return mapping[char] || char;
+    }).join(''); 
+  }
