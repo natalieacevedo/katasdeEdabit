@@ -15,3 +15,5 @@ function encode(string){
       return mapping[char] || char;
     }).join(''); 
   }
+
+console.log(encode('hello'));
