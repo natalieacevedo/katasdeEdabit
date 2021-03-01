@@ -1,4 +1,4 @@
-function iqTest(numbers){
+/*function iqTest(numbers){
     
   let arraycito = numbers.split(' ').map(el => parseInt(el));
   
@@ -25,6 +25,7 @@ function iqTest(numbers){
   return objetito.countEven < objetito.countOdd ? objetito.Even : objetito.Odd;
     
 };
+*/
 
     
 /*function iqTest(numbers){
@@ -37,5 +38,15 @@ function iqTest(numbers){
     return arraycito.indexOf(chosen) + 1;
     
   }*/
+
+  //Clever person
+
+  function iqTest(numbers){
+    var nums = numbers.split(" ").map(x => x % 2);  
+    var sum = nums.reduce((a,b) => a + b);  
+    var target = sum > 1 ? 0 : 1;
+    
+    return nums.indexOf(target) + 1;
+  }
 
 console.log(iqTest("2 4 7 8 10"));
