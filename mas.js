@@ -1,5 +1,6 @@
 function highestRank(arr) {
     let cuentas = new Map();
+    console.log(cuentas);
     let n = 0;
     let max = 0;
     let candidates = [];
