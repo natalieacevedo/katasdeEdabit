@@ -9,7 +9,8 @@ function isValidWalk(walk) {
        nadira[element] = count;
       });
       
-      return nadira['n'] == nadira['s'] && nadira['e'] == nadira['w'];
+      //return nadira['n'] == nadira['s'] && nadira['e'] == nadira['w'];
+        return nadira;
     }
 };
 
