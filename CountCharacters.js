@@ -1,21 +1,12 @@
 function count (string) {  
    
-    let finalObject = {};
-
-     string.split('').forEach(el => {
-        
-         if (finalObject[el] !== undefined) {
-             finalObject[el] = finalObject[el];
-             finalObject[el]++
-         } else {
-             finalObject[el] = 1;
-         }
-         
-    });
-
-    return finalObject;
-
+   
+        return string.split('').reduce(function(counts,char){
+          counts[char] = (counts[char]||0) + 1;
+          return counts;
+        },{});
+      
 };
 
 
-console.log(count('abaaabccccccccccca'));C
+console.log(count('abaaabccccccccccca'));
